@@ -16,12 +16,6 @@ ext {
     springVersion = "4.0.3.RELEASE"
 }
 
-artifacts {
-    archives jar
-    archives javadocJar
-    archives sourcesJar
-}
-
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
     from 'build/docs/javadoc'
@@ -30,6 +24,10 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 task sourcesJar(type: Jar) {
     from sourceSets.main.allSource
     classifier = 'sources'
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
 }
 
 dependencies {
