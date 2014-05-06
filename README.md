@@ -49,7 +49,7 @@ class SampleController {
     @RequestMapping(value = "/messages", method = GET)
     @ApiOperation("hello world")
     public Message hello() {
-	new Message(text: "Hello world!")
+		new Message(text: "Hello world!")
     }
 }
 
