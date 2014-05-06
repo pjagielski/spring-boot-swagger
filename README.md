@@ -1,8 +1,32 @@
 spring-boot-swagger
 ===================
 
-Dead simple Swagger config for Spring Boot
+Dead simple [Swagger](https://github.com/wordnik/swagger-ui) config for [Spring Boot](https://github.com/spring-projects/spring-boot).
 
+Motivation
+==========
+Spring Boot is one of the hottest JVM frameworks in the microservice area. The only missing part for me is integration with Swagger - de factor standard for documenting REST services. There is a great [swagger-springmvc](https://github.com/martypitt/swagger-springmvc) library for Spring MVC, but it's configuration seems to be too verbose for microservices. This project provides sensible defaults for swagger-springmvc which lets you expose Swagger docs in just a few lines of code.
+
+Usage
+=====
+spring-boot-swagger is available for download from central maven repository.
+
+Maven:
+```xml
+<dependency>
+    <groupId>com.github.pjagielski.spring-boot-swagger</groupId>
+    <artifactId>spring-boot-swagger</artifactId>
+    <version>0.1</version>
+</dependency>
+```
+
+Grab:
+```groovy
+@Grab('com.github.pjagielski.spring-boot-swagger:spring-boot-swagger:0.1')
+```
+
+Examples
+========
 Sample `app.groovy`:
 ```groovy
 @Grab('org.springframework.boot:spring-boot-starter-actuator:1.0.2.RELEASE')
@@ -22,11 +46,11 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET
 @RestController
 class SampleController {
 
-	@RequestMapping(value = "/messages", method = GET)
+    @RequestMapping(value = "/messages", method = GET)
     @ApiOperation("hello world")
     public Message hello() {
-		new Message(text: "Hello world!")
-	}
+	new Message(text: "Hello world!")
+    }
 }
 
 class Message {
