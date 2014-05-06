@@ -1,4 +1,4 @@
-spring-boot-swagger
+Spring-boot-swagger
 ===================
 
 Dead simple [Swagger](https://github.com/wordnik/swagger-ui) config for [Spring Boot](https://github.com/spring-projects/spring-boot).
@@ -9,7 +9,7 @@ Spring Boot is one of the hottest JVM frameworks in the microservice area. The o
 
 Usage
 =====
-spring-boot-swagger is available for download from central maven repository.
+Spring-boot-swagger is available for download from central maven repository.
 
 Maven:
 ```xml
