@@ -1,7 +1,8 @@
 Spring-boot-swagger
 ===================
-
 Dead simple [Swagger](https://github.com/wordnik/swagger-ui) config for [Spring Boot](https://github.com/spring-projects/spring-boot).
+
+[![Build Status](https://travis-ci.org/pjagielski/spring-boot-swagger.svg?branch=master)](https://travis-ci.org/pjagielski/spring-boot-swagger)
 
 Motivation
 ==========
@@ -73,4 +74,3 @@ public class SwaggerConfig extends SpringBootSwaggerConfig {
 
 }
 ```
-[![Build Status](https://travis-ci.org/pjagielski/spring-boot-swagger.svg?branch=master)](https://travis-ci.org/pjagielski/spring-boot-swagger)
