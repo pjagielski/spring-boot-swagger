@@ -6,11 +6,11 @@ Dead simple [Swagger](https://github.com/wordnik/swagger-ui) config for [Spring 
 
 Motivation
 ==========
-Spring Boot is one of the hottest JVM frameworks in the microservice area. The only missing part for me is integration with Swagger - de factor standard for documenting REST services. There is a great [swagger-springmvc](https://github.com/martypitt/swagger-springmvc) library for Spring MVC, but it's configuration seems to be too verbose for microservices. This project provides sensible defaults for swagger-springmvc which lets you expose Swagger docs in just a few lines of code.
+Spring Boot is one of the hottest JVM frameworks in the microservice area. The only missing part for me is integration with Swagger — de facto standard for documenting REST services. There is a great [swagger-springmvc](https://github.com/martypitt/swagger-springmvc) library for Spring MVC, but its configuration seems to be too verbose for microservices. This project provides sensible defaults for swagger-springmvc which let you expose Swagger docs in just a few lines of code.
 
 Usage
 =====
-Spring-boot-swagger is available for download from central maven repository.
+Spring-boot-swagger is available for download from the Maven Central repository.
 
 Maven:
 ```xml
@@ -49,7 +49,7 @@ class SampleController {
 
     @RequestMapping(value = "/messages", method = GET)
     @ApiOperation("hello world")
-    public Message hello() {
+    Message hello() {
 		new Message(text: "Hello world!")
     }
 }
@@ -60,17 +60,16 @@ class Message {
 
 @Configuration
 @Import(SpringSwaggerConfig)
-public class SwaggerConfig extends SpringBootSwaggerConfig {
+class SwaggerConfig extends SpringBootSwaggerConfig {
 
     @Override
     protected List<String> getIncludePatterns() {
-        return ['/messages.*']
+        ['/messages.*']
     }
 
     @Override
     protected String getSwaggerGroup() {
-        return 'messages'
+        'messages'
     }
-
 }
 ```
